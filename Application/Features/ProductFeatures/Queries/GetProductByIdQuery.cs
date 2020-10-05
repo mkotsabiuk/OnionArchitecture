@@ -1,10 +1,7 @@
 ﻿using Application.Interfaces;
 using Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,8 +19,9 @@ namespace Application.Features.ProductFeatures.Queries
             }
             public async Task<Product> Handle(GetProductByIdQuery query, CancellationToken cancellationToken)
             {
-                var product = _context.Products.Where(a => a.Id == query.Id).FirstOrDefault();
-                if (product == null) return null;
+                var product = await _context.Products
+                    .FirstOrDefaultAsync(a => a.Id == query.Id, cancellationToken);
+
                 return product;
             }
         }

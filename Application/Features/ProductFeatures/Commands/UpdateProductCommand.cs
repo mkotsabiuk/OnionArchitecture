@@ -1,11 +1,9 @@
 ﻿using Application.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.ProductFeatures.Commands
 {
@@ -25,7 +23,8 @@ namespace Application.Features.ProductFeatures.Commands
             }
             public async Task<int> Handle(UpdateProductCommand command, CancellationToken cancellationToken)
             {
-                var product = _context.Products.Where(a => a.Id == command.Id).FirstOrDefault();
+                var product = await _context.Products
+                    .FirstOrDefaultAsync(a => a.Id == command.Id, cancellationToken);
 
                 if (product == null)
                 {
