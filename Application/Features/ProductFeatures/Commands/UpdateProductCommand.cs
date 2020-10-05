@@ -27,18 +27,14 @@ namespace Application.Features.ProductFeatures.Commands
                     .FirstOrDefaultAsync(a => a.Id == command.Id, cancellationToken);
 
                 if (product == null)
-                {
                     return default;
-                }
-                else
-                {
-                    product.Barcode = command.Barcode;
-                    product.Name = command.Name;
-                    product.Rate = command.Rate;
-                    product.Description = command.Description;
-                    await _context.SaveChangesAsync();
-                    return product.Id;
-                }
+
+                product.Barcode = command.Barcode;
+                product.Name = command.Name;
+                product.Rate = command.Rate;
+                product.Description = command.Description;
+                await _context.SaveChangesAsync();
+                return product.Id;
             }
         }
     }
