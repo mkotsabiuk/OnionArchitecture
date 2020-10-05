@@ -1,9 +1,6 @@
 ﻿using Application.Interfaces;
 using Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -31,7 +28,7 @@ namespace Application.Features.ProductFeatures.Commands
                     Rate = command.Rate,
                     Description = command.Description
                 };
-                _context.Products.Add(product);
+                await _context.Products.AddAsync(product, cancellationToken);
                 await _context.SaveChangesAsync();
                 return product.Id;
             }
