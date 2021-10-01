@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProductFeatures.Commands
 {
+    /// <inheritdoc />
     public class DeleteProductByIdCommand : IRequest<int>
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
         public int Id { get; set; }
+
+        /// <inheritdoc />
         public class DeleteProductByIdCommandHandler : IRequestHandler<DeleteProductByIdCommand, int>
         {
             private readonly IApplicationDbContext _context;
