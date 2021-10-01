@@ -11,17 +11,17 @@
         </member>
         <member name="P:WebApi.Controllers.BaseApiController.Mediator">
             <summary>
-            Mediator
+            Gets the mediator.
             </summary>
         </member>
         <member name="T:WebApi.Controllers.v1.ProductController">
             <summary>
-            Product controller
+            Controller to work with products.
             </summary>
         </member>
         <member name="M:WebApi.Controllers.v1.ProductController.Create(Application.Features.ProductFeatures.Commands.CreateProductCommand)">
             <summary>
-            Creates a New Product.
+            Creates a new product.
             </summary>
             <param name="command">Product command</param>
             <returns>Created product</returns>
@@ -34,25 +34,24 @@
         </member>
         <member name="M:WebApi.Controllers.v1.ProductController.GetById(System.Int32)">
             <summary>
-            Gets Product Entity by Id.
+            Gets Product Entity by identifier.
             </summary>
-            <param name="id">Product's ID</param>
+            <param name="id">Product's identifier.</param>
             <returns>Product by ID</returns>
         </member>
         <member name="M:WebApi.Controllers.v1.ProductController.Delete(System.Int32)">
             <summary>
-            Deletes Product Entity based on Id.
+            Deletes product entity based on identifier.
             </summary>
-            <param name="id">Product's ID</param>
-            <returns></returns>
+            <param name="id">Product identifier.</param>
         </member>
         <member name="M:WebApi.Controllers.v1.ProductController.Update(System.Int32,Application.Features.ProductFeatures.Commands.UpdateProductCommand)">
             <summary>
-            Updates the Product Entity based on Id.   
+            Updates the product entity based on identifier.   
             </summary>
-            <param name="id">Product's ID</param>
-            <param name="command"></param>
-            <returns>Product's ID</returns>
+            <param name="id">Product identifier.</param>
+            <param name="command">Update product command.</param>
+            <returns>Product's identifier</returns>
         </member>
         <member name="T:WebApi.Program">
             <summary>
