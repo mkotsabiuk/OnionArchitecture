@@ -12,9 +12,9 @@ namespace WebApi.Controllers
     public abstract class BaseApiController : ControllerBase
     {
         private IMediator _mediator;
-        
+
         /// <summary>
-        /// Mediator
+        /// Gets the mediator.
         /// </summary>
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
     }

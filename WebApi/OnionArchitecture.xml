@@ -4,40 +4,102 @@
         <name>WebApi</name>
     </assembly>
     <members>
+        <member name="T:WebApi.Controllers.BaseApiController">
+            <summary>
+            Base API controller
+            </summary>
+        </member>
+        <member name="P:WebApi.Controllers.BaseApiController.Mediator">
+            <summary>
+            Mediator
+            </summary>
+        </member>
+        <member name="T:WebApi.Controllers.v1.ProductController">
+            <summary>
+            Product controller
+            </summary>
+        </member>
         <member name="M:WebApi.Controllers.v1.ProductController.Create(Application.Features.ProductFeatures.Commands.CreateProductCommand)">
             <summary>
             Creates a New Product.
             </summary>
-            <param name="command"></param>
-            <returns></returns>
+            <param name="command">Product command</param>
+            <returns>Created product</returns>
         </member>
         <member name="M:WebApi.Controllers.v1.ProductController.GetAll">
             <summary>
             Gets all Products.
             </summary>
-            <returns></returns>
+            <returns>List of products</returns>
         </member>
         <member name="M:WebApi.Controllers.v1.ProductController.GetById(System.Int32)">
             <summary>
             Gets Product Entity by Id.
             </summary>
-            <param name="id"></param>
-            <returns></returns>
+            <param name="id">Product's ID</param>
+            <returns>Product by ID</returns>
         </member>
         <member name="M:WebApi.Controllers.v1.ProductController.Delete(System.Int32)">
             <summary>
             Deletes Product Entity based on Id.
             </summary>
-            <param name="id"></param>
+            <param name="id">Product's ID</param>
             <returns></returns>
         </member>
         <member name="M:WebApi.Controllers.v1.ProductController.Update(System.Int32,Application.Features.ProductFeatures.Commands.UpdateProductCommand)">
             <summary>
             Updates the Product Entity based on Id.   
             </summary>
-            <param name="id"></param>
+            <param name="id">Product's ID</param>
             <param name="command"></param>
-            <returns></returns>
+            <returns>Product's ID</returns>
+        </member>
+        <member name="T:WebApi.Program">
+            <summary>
+            Main class that contains Main method
+            </summary>
+        </member>
+        <member name="M:WebApi.Program.Main(System.String[])">
+            <summary>
+            Entry point
+            </summary>
+            <param name="args">Command line arguments</param>
+        </member>
+        <member name="M:WebApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates host builder
+            </summary>
+            <param name="args">Command line arguments</param>
+            <returns>Host builder</returns>
+        </member>
+        <member name="T:WebApi.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="M:WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration">Configurations</param>
+        </member>
+        <member name="P:WebApi.Startup.Configuration">
+            <summary>
+            Gets configurations
+            </summary>
+        </member>
+        <member name="M:WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">Services</param>
+        </member>
+        <member name="M:WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">Application builder</param>
+            <param name="env">Web host environment</param>
         </member>
     </members>
 </doc>

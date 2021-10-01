@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 namespace WebApi.Controllers.v1
 {
     /// <summary>
-    /// Product controller
+    /// Controller to work with products.
     /// </summary>
     [ApiVersion("1.0")]
     public class ProductController : BaseApiController
     {
         /// <summary>
-        /// Creates a New Product.
+        /// Creates a new product.
         /// </summary>
         /// <param name="command">Product command</param>
         /// <returns>Created product</returns>
@@ -33,9 +33,9 @@ namespace WebApi.Controllers.v1
         }
 
         /// <summary>
-        /// Gets Product Entity by Id.
+        /// Gets Product Entity by identifier.
         /// </summary>
-        /// <param name="id">Product's ID</param>
+        /// <param name="id">Product's identifier.</param>
         /// <returns>Product by ID</returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
@@ -44,21 +44,20 @@ namespace WebApi.Controllers.v1
         }
 
         /// <summary>
-        /// Deletes Product Entity based on Id.
+        /// Deletes product entity based on identifier.
         /// </summary>
-        /// <param name="id">Product's ID</param>
-        /// <returns></returns>
+        /// <param name="id">Product identifier.</param>
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await Mediator.Send(new DeleteProductByIdCommand { Id = id }));
         }
         /// <summary>
-        /// Updates the Product Entity based on Id.   
+        /// Updates the product entity based on identifier.   
         /// </summary>
-        /// <param name="id">Product's ID</param>
-        /// <param name="command"></param>
-        /// <returns>Product's ID</returns>
+        /// <param name="id">Product identifier.</param>
+        /// <param name="command">Update product command.</param>
+        /// <returns>Product's identifier</returns>
         [HttpPut("[action]")]
         public async Task<IActionResult> Update(int id, UpdateProductCommand command)
         {
